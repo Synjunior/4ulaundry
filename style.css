@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+body{
+    color: white;
+    margin: 0 auto;
+}
+
+:root{
+    --font-primary:"Baloo Da 2", serif;
+    --font-secundary:"Josefin Slab", serif;
+    --font-action:
+}
+
+.toptest{
+    width: 100%;
+    height: 100vh; /* Utilizei o vh pq quando redimensionada utilizará a altura correspondente, vh = altura da view*/
+    overflow: hidden; /* Caso elemento fique maior que a tela, não gera barra de rolagem lateral*/
+    position: relative;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.img-wrapper img{ /*A imagem não estava se limitando a classe container, então formatei assim para ter a mesma altura e largura do componente pai*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Faz com que a imagem não fique sendo expremida e perca proporção quando redimensionada*/
+    animation: zoom 15s;
+    opacity: .6;
+}
+
+@keyframes zoom { /*Efeito de zoom na imagem (0% é onde ela começa e 100% onde termina)*/
+    0%{
+        transform: scale(1.6);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.banner{
+    position: absolute; /*Para funcionar, é preciso que esteja dentro de um elemento que tenha um posicionamento relativo, neste caso, a classe toptest tem que ter a posição relativa, com isso, posso posicionar esse banner em qualquer lugar do header*/
+    top: 5%;
+    left: 10%;
+    width: 100%;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 200;
+    text-shadow: .2rem .3rem 2px rgba(0, 0, 0, 0.4);
+}
+
+.banner p{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#wcol{
+    color: white;
+}
+
+#op{
+    margin-left: 37%;
+    width: 100%;
+}
+
+#imgmain{
+    margin-top: 35px;
+    width: 380px;
+    margin-left: 50px;
+    border-radius: 15px;
+}
+
+#title{
+    flex-direction: column;
+    line-height: 10px;
+}
+
+a{
+    color: white;
+}
+
+a:hover{  /* hover serve para quando passar o mouse mudar a cor do link*/
+    color: #34D40C;
+    transition: 0.6s all; /* transição de cor*/
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+h1{
+    font-weight: 200;
+    color: black;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.sessao-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sessao-header h1{
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: #4b4b4b;
+    margin-top: -.1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: solid 3px #FF8C00;
+}
+
+#serv{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#listaserv{
+   text-align: left;
+}
+
+.imgsserv{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+}
+
+#mapa{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 50px;
+    white-space: pre;
+    margin-top: 120px;
+}
+
+span{
+    color: white;
+}
+
+p{
+    line-height: 20px;
+    max-width: 500px;
+    margin-top: -30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+#wpp {
+    border: 3px solid #34D40C;
+    width: 50%;
+    padding: 15px;
+    text-transform: uppercase;
+    margin-left: 30%;
+    border-radius: 25px;
+    box-shadow: 0 6px #238E09, 0 0 35px #34D40C; /*sombra do bt, primeiro a cor e dps efeito neon*/
+}
+
+#wpp:hover{
+    background-color: #34D40C;
+    opacity: 10;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 2px black;
+}
+
+#sessao-serviços{
+    width: 100%;
+    height: 82vh;
+    overflow: hidden; 
+    position: relative;
+    background-color: #BBE9FB;
+}
+
+.serviços{
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.card{
+    width: 18rem;
+    height: 25rem;
+    position: relative;
+}
+
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: .5rem;
+}
+
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    opacity: .9;
+    transition: opacity .3s;
+}
+
+.card:hover .card-img-wrapper img{
+    opacity: .3;
+}
+
+.card-info{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0; /*Fica na posição zero a partir da parte de baixo do card*/
+    padding: 2rem;
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 6);
+    transition: all .3s;
+}
+
+.card-info h2{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: -1.5rem;
+}
+
+.card-info h3{
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.card-info p {
+    font-weight: 500;
+}
+
+.card-info button{
+    width: 8rem;
+    height: 2.5rem;
+    border: 3px solid orange;
+    background-color: orange;
+    border-radius: .5rem;
+    box-shadow: 0 6px orange, 0 0 35px #FF8C00;
+    cursor: pointer;
+}
+
+.card:hover .card-info{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+#sessao-sobre{
+    background-color: #000;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    border: solid 1px red;
+}
+
+.sobre{
+    display: flex;
+    flex-direction: row;
+    left: 10%;
+    width: 100%;
+    border: solid 1px red;
+}
+.sobre-info{
+    margin: 6rem;
+    word-spacing: 10px;
+    line-height: 30px;
+    margin-right: 15rem;
+    text-align: justify;
+    border: 1px solid blue;
+    width: 100%;
+}
+
+#cont-sobre{
+    margin: 2rem;
+    background-color: black;
+}
+
+#sobre-img-wrapper{
+    margin-top: 35px;
+    width: 380px;
+    margin-left: -1rem;
+    border-radius: 15px;
+}
+

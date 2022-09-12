@@ -1,0 +1,48 @@
+@media screen and (max-width: 760px){
+    .banner{
+        position: absolute; /*Para funcionar, é preciso que esteja dentro de um elemento que tenha um posicionamento relativo, neste caso, a classe toptest tem que ter a posição relativa*/
+        top: 5%;
+        left: 5%;
+        width: 100%;
+        font-family: ;
+        font-size: 1rem;
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #op{
+        text-align: center;
+        width: 50vh;
+        margin-left: 0;
+    }
+
+    ul{
+        width: 80%;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    .img-wrapper{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .img-wrapper img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /*Faz com que a imagem não fique sendo expremida e perca proporção quando redimensionada*/
+        animation: none;
+    }
+}
